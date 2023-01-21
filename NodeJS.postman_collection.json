@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "e1d9a17c-072d-42ae-8c98-281ab87b4512",
+		"name": "NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3294905"
+	},
+	"item": [
+		{
+			"name": "Project_JWT",
+			"item": [
+				{
+					"name": "Obtiene mensaje",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login del usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"//postman.setEnvironmentVariable(\"tokenJWT\", jsonData.token);\r",
+									"//console.log(pm.environment.replaceIn('{{tokenJWT}}'));\r",
+									"pm.globals.set(\"tokenJWT\", jsonData.token);\r",
+									"console.log(pm.globals.replaceIn('{{tokenJWT}}'));\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenJWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
