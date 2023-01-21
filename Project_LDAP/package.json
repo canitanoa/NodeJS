@@ -1,0 +1,17 @@
+{
+  "name": "project_ldap",
+  "version": "1.0.0",
+  "description": "Inicializar el proyecto\r $ npm init -y",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app_ldap.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
