@@ -1,3 +1,6 @@
+Pasos para la creación del proyecto:
+
+```txt
 Create project: 
 $ mkdir Project_EMAIL
 $ cd Project_EMAIL
@@ -8,7 +11,7 @@ $ npm i nodemailer
 
 Create server:
 $ touch index.js
-
+```
 
 Para configurar el servidor de emial: 
 Se utiliza Ethereal que es un servicio SMTP falso, antitransaccional completamente gratuito donde los mensajes nunca se entregan.
